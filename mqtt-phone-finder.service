@@ -1,0 +1,16 @@
+[Unit]
+Description=Start MQTT phonefinder 
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ben/bin
+ExecStart=/home/ben/bin/mqtt_phonefinder.py
+TimeoutSec=10s
+KillMode=process
+Restart=always
+RestartSec=10
+Nice=-10
+
+[Install]
+WantedBy=multi-user.target
+
