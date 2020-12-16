@@ -3,7 +3,6 @@
  
 import os
 import paho.mqtt.client as mqtt
-from pushbullet import Pushbullet
 
 def on_message(client, userdata, message):
     msg = str(message.payload.decode("utf-8"))
@@ -11,10 +10,9 @@ def on_message(client, userdata, message):
     print("message topic:", message.topic)
     if (msg == "ben" or msg == "anna"):
       if (msg == "ben"):
-        pb = Pushbullet("v1V61d2ptmCVqCECciR0pwP3FdSILZ5SiKujz3mA55KM0")
+        #pushmsg
       if (msg == "anna"):
-        pb = Pushbullet("o.RcirsF9VRtJpuOuJFYJNtdPkAmz1GQJ6")
-      push = pb.push_note("p1", "phonealert")
+        #pushmsg
  
 def on_connect(client, userdata, flags, rc):
     client.subscribe('phonefinder/alert')
